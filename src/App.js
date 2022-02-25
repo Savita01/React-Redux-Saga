@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Container } from "semantic-ui-react";
 import DisplayBalance from "./Componets/DisplayBalance";
-import EntryLine from "./Componets/EntryLine";
+import EntryLines from "./Componets/EntryLine";
 import MainHeader from "./Componets/MainHeader";
 import NewEntryForm from "./Componets/NewEntryForm";
 import DisplayBalances from "./Componets/DisplayBalances";
@@ -20,13 +20,7 @@ function App() {
       />
       <DisplayBalances />
       <MainHeader title="History" type="h3" />
-      {entries.map((entry) => (
-        <EntryLine
-          description={entry.description}
-          value={entry.value}
-          isExpenses={entry.isExpenses}
-        />
-      ))}
+      <EntryLines entries={entries} />
       <MainHeader title="Add new transaction" type="h3" />
       <NewEntryForm />
     </Container>
