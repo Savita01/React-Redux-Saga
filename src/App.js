@@ -8,11 +8,11 @@ import {
   Form,
   Button
 } from "semantic-ui-react";
+import MainHeader from "./Componets/MainHeader";
 function App() {
   return (
     <Container>
-      <Header as="h1">Budget</Header>
-
+      <MainHeader title={"Budget"} />
       <Statistic size="small">
         <Statistic.Label>Your Balance:</Statistic.Label>
         <Statistic.Value>25500</Statistic.Value>
@@ -40,7 +40,7 @@ function App() {
           </Grid.Row>
         </Grid>
       </Segment>
-      <Header as="h3">Histary</Header>
+      <MainHeader title="History" type="h3" />
       <Segment color="red">
         <Grid columns={3} textAlign="right">
           <Grid.Row>
@@ -89,7 +89,8 @@ function App() {
           </Grid.Row>
         </Grid>
       </Segment>
-      <Header as="h3">Add new transaction</Header>
+      <MainHeader title=" Add new transaction" type="h3" />
+
       <Form unstackable>
         <Form.Group>
           <Form.Input
