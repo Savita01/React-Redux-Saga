@@ -20,16 +20,13 @@ function App() {
       />
       <DisplayBalances />
       <MainHeader title="History" type="h3" />
-      <EntryLine
-        description={entries[0].description}
-        value={entries[0].value}
-        isExpenses={entries[0].isExpenses}
-      />
-      <EntryLine
-        description={entries[1].description}
-        value={entries[1].value}
-        isExpenses
-      />
+      {entries.map((entry) => (
+        <EntryLine
+          description={entry.description}
+          value={entry.value}
+          isExpenses={entry.isExpenses}
+        />
+      ))}
       <MainHeader title="Add new transaction" type="h3" />
       <NewEntryForm />
     </Container>
