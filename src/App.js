@@ -1,12 +1,5 @@
-import {
-  Container,
-  Grid,
-  Segment,
-  Statistic,
-  Icon,
-  Form
-} from "semantic-ui-react";
-import ButtonSaveOrCancel from "./Componets/ButtonSaveOrCancel";
+import { Container, Grid, Segment, Statistic, Icon } from "semantic-ui-react";
+import DisplayBalance from "./Componets/DisplayBalance";
 import MainHeader from "./Componets/MainHeader";
 import NewEntryForm from "./Componets/NewEntryForm";
 
@@ -14,29 +7,21 @@ function App() {
   return (
     <Container>
       <MainHeader title={"Budget"} />
-      <Statistic size="small">
-        <Statistic.Label>Your Balance:</Statistic.Label>
-        <Statistic.Value>25500</Statistic.Value>
-      </Statistic>
+      <DisplayBalance
+        title="Your Balance"
+        value="1,23,67.00"
+        size="small"
+        color="black"
+      />
 
       <Segment textAlign="center">
         <Grid columns={2} divided>
           <Grid.Row>
             <Grid.Column>
-              <Statistic size="tiny" color="green">
-                <Statistic.Label style={{ textAlign: "left" }}>
-                  Incoming:
-                </Statistic.Label>
-                <Statistic.Value>122222</Statistic.Value>
-              </Statistic>
+              <DisplayBalance title="income" value="1,045.50" color="green" />
             </Grid.Column>
             <Grid.Column>
-              <Statistic size="tiny" color="red">
-                <Statistic.Label style={{ textAlign: "left" }}>
-                  Expenses:
-                </Statistic.Label>
-                <Statistic.Value>122222</Statistic.Value>
-              </Statistic>
+              <DisplayBalance title="Expence" value="653.50" color="red" />
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -91,11 +76,7 @@ function App() {
         </Grid>
       </Segment>
       <MainHeader title=" Add new transaction" type="h3" />
-
-      <Form unstackable>
-        <NewEntryForm />
-        <ButtonSaveOrCancel />
-      </Form>
+      <NewEntryForm />
     </Container>
   );
 }
