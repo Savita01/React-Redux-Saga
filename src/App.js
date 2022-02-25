@@ -1,14 +1,15 @@
 import {
   Container,
   Grid,
-  Header,
   Segment,
   Statistic,
   Icon,
-  Form,
-  Button
+  Form
 } from "semantic-ui-react";
+import ButtonSaveOrCancel from "./Componets/ButtonSaveOrCancel";
 import MainHeader from "./Componets/MainHeader";
+import NewEntryForm from "./Componets/NewEntryForm";
+
 function App() {
   return (
     <Container>
@@ -92,26 +93,8 @@ function App() {
       <MainHeader title=" Add new transaction" type="h3" />
 
       <Form unstackable>
-        <Form.Group>
-          <Form.Input
-            icon="tags"
-            width={12}
-            label="Description"
-            placeholder="New shinny thing"
-          />
-          <Form.Input
-            width={4}
-            label="Value"
-            placeholder="100.00"
-            icon="doller"
-            iconPosition="left"
-          />
-        </Form.Group>
-        <Button.Group style={{ marginTop: 20 }}>
-          <Button>Cancel</Button>
-          <Button.Or />
-          <Button primary>OK</Button>
-        </Button.Group>
+        <NewEntryForm />
+        <ButtonSaveOrCancel />
       </Form>
     </Container>
   );
