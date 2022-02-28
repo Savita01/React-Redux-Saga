@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Container } from "semantic-ui-react";
 import DisplayBalance from "./Componets/DisplayBalance";
-import EntryLines from "./Componets/EntryLine";
+import EntryLines from "./Componets/EntryLines";
 import MainHeader from "./Componets/MainHeader";
 import NewEntryForm from "./Componets/NewEntryForm";
 import DisplayBalances from "./Componets/DisplayBalances";
@@ -30,13 +30,22 @@ export default App;
 
 var initialEntries = [
   {
+    id: 1,
     description: "work income",
     value: "$1000.00",
     isExpenses: false
   },
+  { id: 2, description: "water bill", value: "$10.00", isExpenses: true },
   {
-    description: "water bill",
-    value: "$10.00",
+    id: 3,
+    description: "current bill",
+    value: "$20.00",
     isExpenses: true
+  },
+  {
+    id: 4,
+    description: "interest",
+    value: "$100.00",
+    isExpenses: false
   }
 ];

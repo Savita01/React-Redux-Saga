@@ -6,11 +6,7 @@ function EntryLines({ entries }) {
   return (
     <Container>
       {entries.map((entry) => (
-        <EntryLine
-          description={entry.description}
-          value={entry.value}
-          isExpenses={entry.isExpenses}
-        />
+        <EntryLine key={entry.id} entry={entry} />
       ))}
     </Container>
   );
