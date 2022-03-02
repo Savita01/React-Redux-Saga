@@ -9,6 +9,24 @@ import DisplayBalances from "./Componets/DisplayBalances";
 
 function App() {
   const [entries, setEntries] = useState(initialEntries);
+
+  function deleteEntry(id) {
+    const result = entries.filter((entry) => entry.id !== id);
+    console.log(`entries`, entries);
+    console.log(`result`, result);
+    setEntries(result);
+  }
+  function addEntry(description, value, isExpenses) {
+    const result = entries.concat({
+      id: entries.length + 1,
+      description,
+      value,
+      isExpenses
+    });
+    console.log("result", result);
+    console.log("entries", entries);
+    setEntries(result);
+  }
   return (
     <Container>
       <MainHeader title={"Budget"} />
@@ -20,9 +38,9 @@ function App() {
       />
       <DisplayBalances />
       <MainHeader title="History" type="h3" />
-      <EntryLines entries={entries} />
+      <EntryLines entries={entries} deleteEntry={deleteEntry} />
       <MainHeader title="Add new transaction" type="h3" />
-      <NewEntryForm />
+      <NewEntryForm addEntry={addEntry} />
     </Container>
   );
 }
